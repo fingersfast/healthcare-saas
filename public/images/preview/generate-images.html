@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Healthcare Preview Images</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 p-8">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-3xl font-bold mb-6">
+        Healthcare Preview Image Generator
+      </h1>
+      <p class="mb-6">
+        This page helps generate placeholder images for the healthcare demo.
+        Right-click and save each image.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <!-- Dashboard Preview -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Dashboard Preview</h2>
+          <div
+            id="dashboard-preview"
+            class="bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <div class="bg-blue-600 h-16 px-6 flex items-center">
+              <h3 class="text-white font-bold">Hospital Analytics Dashboard</h3>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-3 gap-4 mb-6">
+                <div class="bg-blue-50 rounded-lg p-4 text-center">
+                  <div class="text-3xl font-bold text-blue-600">98%</div>
+                  <div class="text-sm text-gray-600">Bed Occupancy</div>
+                </div>
+                <div class="bg-green-50 rounded-lg p-4 text-center">
+                  <div class="text-3xl font-bold text-green-600">24</div>
+                  <div class="text-sm text-gray-600">Surgeries Today</div>
+                </div>
+                <div class="bg-purple-50 rounded-lg p-4 text-center">
+                  <div class="text-3xl font-bold text-purple-600">87</div>
+                  <div class="text-sm text-gray-600">Staff On Duty</div>
+                </div>
+              </div>
+              <div
+                class="h-48 bg-gray-100 rounded-lg mb-6 flex items-center justify-center"
+              >
+                <div
+                  class="w-3/4 h-32 bg-blue-500 rounded-lg relative overflow-hidden"
+                >
+                  <div
+                    class="absolute bottom-0 left-0 w-10 h-28 bg-blue-700"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-10 w-10 h-20 bg-blue-700"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-20 w-10 h-24 bg-blue-700"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-30 w-10 h-16 bg-blue-700"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-40 w-10 h-22 bg-blue-700"
+                  ></div>
+                  <div class="text-white text-xs absolute top-2 left-2">
+                    Patient Admissions
+                  </div>
+                </div>
+              </div>
+              <div class="flex space-x-4">
+                <div class="h-20 bg-gray-100 rounded-lg flex-1"></div>
+                <div class="h-20 bg-gray-100 rounded-lg flex-1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Department Preview -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Department Preview</h2>
+          <div
+            id="department-preview"
+            class="bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <div class="bg-green-600 h-16 px-6 flex items-center">
+              <h3 class="text-white font-bold">Hospital Departments</h3>
+            </div>
+            <div class="p-6">
+              <div class="mb-4 grid grid-cols-3 gap-4">
+                <div class="border border-gray-200 rounded-lg p-3">
+                  <div class="font-bold text-green-600">Cardiology</div>
+                  <div class="text-sm text-gray-600">Floor 3</div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-3">
+                  <div class="font-bold text-green-600">Neurology</div>
+                  <div class="text-sm text-gray-600">Floor 4</div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-3">
+                  <div class="font-bold text-green-600">Pediatrics</div>
+                  <div class="text-sm text-gray-600">Floor 2</div>
+                </div>
+              </div>
+              <div class="bg-gray-100 h-64 rounded-lg p-4">
+                <div class="text-sm font-medium mb-2">Hospital Floor Plan</div>
+                <div class="h-52 bg-white rounded border border-gray-200 p-2">
+                  <div class="grid grid-cols-4 gap-2 h-full">
+                    <div class="bg-blue-100 rounded"></div>
+                    <div class="bg-green-100 rounded"></div>
+                    <div class="bg-yellow-100 rounded"></div>
+                    <div class="bg-red-100 rounded"></div>
+                    <div class="bg-purple-100 rounded"></div>
+                    <div class="bg-pink-100 rounded"></div>
+                    <div class="bg-indigo-100 rounded"></div>
+                    <div class="bg-gray-200 rounded"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Staff Preview -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Staff Preview</h2>
+          <div
+            id="staff-preview"
+            class="bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <div class="bg-indigo-600 h-16 px-6 flex items-center">
+              <h3 class="text-white font-bold">Staff Management</h3>
+            </div>
+            <div class="p-6">
+              <div class="flex mb-4 space-x-4">
+                <div class="flex-1">
+                  <div class="font-medium text-gray-700 mb-2">
+                    Staff on Duty
+                  </div>
+                  <div class="flex -space-x-2">
+                    <div
+                      class="w-10 h-10 rounded-full bg-blue-300 border-2 border-white"
+                    ></div>
+                    <div
+                      class="w-10 h-10 rounded-full bg-green-300 border-2 border-white"
+                    ></div>
+                    <div
+                      class="w-10 h-10 rounded-full bg-yellow-300 border-2 border-white"
+                    ></div>
+                    <div
+                      class="w-10 h-10 rounded-full bg-red-300 border-2 border-white"
+                    ></div>
+                    <div
+                      class="w-10 h-10 rounded-full bg-gray-300 border-2 border-white flex items-center justify-center text-sm"
+                    >
+                      +8
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <div class="font-medium text-gray-700 mb-2">Departments</div>
+                  <div class="grid grid-cols-3 gap-1">
+                    <div class="rounded bg-blue-100 h-6"></div>
+                    <div class="rounded bg-green-100 h-6"></div>
+                    <div class="rounded bg-yellow-100 h-6"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-3 mb-4">
+                <div class="font-medium mb-2">Weekly Schedule</div>
+                <div class="grid grid-cols-7 gap-1">
+                  <div class="bg-indigo-100 h-32 rounded"></div>
+                  <div class="bg-indigo-200 h-32 rounded"></div>
+                  <div class="bg-indigo-300 h-32 rounded"></div>
+                  <div class="bg-indigo-100 h-32 rounded"></div>
+                  <div class="bg-indigo-200 h-32 rounded"></div>
+                  <div class="bg-indigo-50 h-32 rounded"></div>
+                  <div class="bg-indigo-50 h-32 rounded"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics Preview -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Analytics Preview</h2>
+          <div
+            id="analytics-preview"
+            class="bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <div class="bg-purple-600 h-16 px-6 flex items-center">
+              <h3 class="text-white font-bold">Hospital Analytics</h3>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="bg-purple-50 rounded-lg p-3">
+                  <div class="font-medium text-sm text-purple-800">
+                    Patient Satisfaction
+                  </div>
+                  <div class="text-3xl font-bold text-purple-600">92%</div>
+                  <div class="h-2 w-full bg-gray-200 rounded-full mt-2">
+                    <div
+                      class="h-2 bg-purple-500 rounded-full"
+                      style="width: 92%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="bg-purple-50 rounded-lg p-3">
+                  <div class="font-medium text-sm text-purple-800">
+                    Bed Utilization
+                  </div>
+                  <div class="text-3xl font-bold text-purple-600">87%</div>
+                  <div class="h-2 w-full bg-gray-200 rounded-full mt-2">
+                    <div
+                      class="h-2 bg-purple-500 rounded-full"
+                      style="width: 87%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="h-48 bg-gray-100 rounded-lg p-3 mb-4">
+                <div class="font-medium text-sm mb-2">Monthly Trends</div>
+                <div class="h-36 flex items-end space-x-2 px-2">
+                  <div class="h-20% w-6 bg-purple-200 rounded-t"></div>
+                  <div class="h-40% w-6 bg-purple-300 rounded-t"></div>
+                  <div class="h-30% w-6 bg-purple-400 rounded-t"></div>
+                  <div class="h-60% w-6 bg-purple-500 rounded-t"></div>
+                  <div class="h-50% w-6 bg-purple-400 rounded-t"></div>
+                  <div class="h-70% w-6 bg-purple-500 rounded-t"></div>
+                  <div class="h-90% w-6 bg-purple-600 rounded-t"></div>
+                  <div class="h-80% w-6 bg-purple-500 rounded-t"></div>
+                  <div class="h-75% w-6 bg-purple-400 rounded-t"></div>
+                  <div class="h-60% w-6 bg-purple-300 rounded-t"></div>
+                  <div class="h-50% w-6 bg-purple-400 rounded-t"></div>
+                  <div class="h-65% w-6 bg-purple-500 rounded-t"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Patient Preview -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Patient Preview</h2>
+          <div
+            id="patient-preview"
+            class="bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <div class="bg-blue-600 h-16 px-6 flex items-center">
+              <h3 class="text-white font-bold">Patient Management</h3>
+            </div>
+            <div class="p-6">
+              <div class="flex mb-4 space-x-4">
+                <div
+                  class="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-3xl text-gray-400">👤</span>
+                </div>
+                <div class="flex-1">
+                  <div class="font-bold text-lg">John Smith</div>
+                  <div class="text-sm text-gray-600">Patient ID: P-12345</div>
+                  <div class="text-sm text-gray-600">DOB: 05/15/1975</div>
+                  <div class="mt-1">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                      >Cardiology</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="border border-gray-200 rounded-lg p-4 mb-4">
+                <div class="font-medium mb-2">Recent Visits</div>
+                <div class="space-y-2">
+                  <div class="flex justify-between">
+                    <div class="text-sm">General Checkup</div>
+                    <div class="text-sm text-gray-500">Apr 10, 2023</div>
+                  </div>
+                  <div class="flex justify-between">
+                    <div class="text-sm">Cardiology Consult</div>
+                    <div class="text-sm text-gray-500">Mar 15, 2023</div>
+                  </div>
+                  <div class="flex justify-between">
+                    <div class="text-sm">Blood Test</div>
+                    <div class="text-sm text-gray-500">Feb 28, 2023</div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-3 rounded-lg">
+                  <div class="text-sm font-medium text-blue-800">
+                    Next Appointment
+                  </div>
+                  <div class="font-bold">May 20, 2023</div>
+                </div>
+                <div class="bg-green-50 p-3 rounded-lg">
+                  <div class="text-sm font-medium text-green-800">
+                    Prescription
+                  </div>
+                  <div class="font-bold">2 Active</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Preview -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Security Preview</h2>
+          <div
+            id="security-preview"
+            class="bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <div class="bg-gray-800 h-16 px-6 flex items-center">
+              <h3 class="text-white font-bold">Security & Compliance</h3>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="bg-green-50 rounded-lg p-3 text-center">
+                  <div class="text-sm text-green-800 font-medium">
+                    HIPAA Status
+                  </div>
+                  <div
+                    class="font-bold text-green-600 flex items-center justify-center"
+                  >
+                    <svg
+                      class="h-5 w-5 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    Compliant
+                  </div>
+                </div>
+                <div class="bg-blue-50 rounded-lg p-3 text-center">
+                  <div class="text-sm text-blue-800 font-medium">
+                    Data Encryption
+                  </div>
+                  <div class="font-bold text-blue-600">256-bit AES</div>
+                </div>
+              </div>
+              <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                <div class="font-medium mb-2">Recent Access Logs</div>
+                <div class="space-y-2 text-sm">
+                  <div class="bg-white p-2 rounded flex justify-between">
+                    <div>User: dr_smith</div>
+                    <div class="text-gray-500">2 mins ago</div>
+                  </div>
+                  <div class="bg-white p-2 rounded flex justify-between">
+                    <div>User: nurse_johnson</div>
+                    <div class="text-gray-500">15 mins ago</div>
+                  </div>
+                  <div class="bg-white p-2 rounded flex justify-between">
+                    <div>User: admin_taylor</div>
+                    <div class="text-gray-500">32 mins ago</div>
+                  </div>
+                </div>
+              </div>
+              <div class="border border-gray-200 rounded-lg p-3">
+                <div class="font-medium mb-2">Security Status</div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="bg-green-100 p-2 rounded text-xs text-green-800">
+                    Firewall Active
+                  </div>
+                  <div class="bg-green-100 p-2 rounded text-xs text-green-800">
+                    Audit Logs Enabled
+                  </div>
+                  <div class="bg-green-100 p-2 rounded text-xs text-green-800">
+                    2FA Enabled
+                  </div>
+                  <div class="bg-green-100 p-2 rounded text-xs text-green-800">
+                    Auto Backups
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Financial Preview -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Financial Preview</h2>
+          <div
+            id="financial-preview"
+            class="bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <div class="bg-green-700 h-16 px-6 flex items-center">
+              <h3 class="text-white font-bold">Financial Dashboard</h3>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="bg-green-50 rounded-lg p-3">
+                  <div class="text-sm text-green-800 font-medium">
+                    Revenue (MTD)
+                  </div>
+                  <div class="text-2xl font-bold text-green-700">
+                    $1,245,678
+                  </div>
+                  <div class="text-xs text-green-600">+12% from last month</div>
+                </div>
+                <div class="bg-green-50 rounded-lg p-3">
+                  <div class="text-sm text-green-800 font-medium">
+                    Expenses (MTD)
+                  </div>
+                  <div class="text-2xl font-bold text-green-700">$876,543</div>
+                  <div class="text-xs text-red-600">+5% from last month</div>
+                </div>
+              </div>
+              <div class="h-40 bg-gray-100 rounded-lg p-3 mb-4">
+                <div class="text-sm font-medium">Revenue by Department</div>
+                <div class="h-28 flex items-end space-x-3 mt-2">
+                  <div class="flex-1 h-60% bg-green-200 rounded-t"></div>
+                  <div class="flex-1 h-80% bg-green-300 rounded-t"></div>
+                  <div class="flex-1 h-40% bg-green-400 rounded-t"></div>
+                  <div class="flex-1 h-70% bg-green-500 rounded-t"></div>
+                  <div class="flex-1 h-30% bg-green-600 rounded-t"></div>
+                </div>
+              </div>
+              <div class="border border-gray-200 rounded-lg p-3">
+                <div class="font-medium mb-2">Insurance Claims</div>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="rounded bg-blue-50 p-2 text-center">
+                    <div class="text-sm font-medium text-blue-800">Pending</div>
+                    <div class="font-bold text-blue-600">24</div>
+                  </div>
+                  <div class="rounded bg-green-50 p-2 text-center">
+                    <div class="text-sm font-medium text-green-800">
+                      Approved
+                    </div>
+                    <div class="font-bold text-green-600">156</div>
+                  </div>
+                  <div class="rounded bg-red-50 p-2 text-center">
+                    <div class="text-sm font-medium text-red-800">Rejected</div>
+                    <div class="font-bold text-red-600">8</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-bold mb-2">How to Use</h2>
+        <ol class="list-decimal pl-5 space-y-2">
+          <li>
+            Right-click on each preview image and select "Save image as..."
+          </li>
+          <li>
+            Save each image with these names:
+            <ul class="list-disc pl-5 mt-1">
+              <li>dashboard-preview.jpg</li>
+              <li>department-preview.jpg</li>
+              <li>staff-preview.jpg</li>
+              <li>analytics-preview.jpg</li>
+              <li>patient-preview.jpg</li>
+              <li>security-preview.jpg</li>
+              <li>financial-preview.jpg</li>
+            </ul>
+          </li>
+          <li>Save them to the /public/images/preview/ folder</li>
+        </ol>
+      </div>
+
+      <script>
+        // Convert div elements to canvas/images for download
+        document.addEventListener("DOMContentLoaded", function () {
+          // Add information about taking screenshots
+          console.log(
+            "Please take screenshots of each preview div to use as preview images"
+          );
+        });
+      </script>
+    </div>
+  </body>
+</html>
