@@ -48,7 +48,7 @@ export default function Hero() {
               <p className="mt-4 text-base text-gray-600 sm:mt-5 sm:text-lg md:mt-5 md:text-xl">
                 Streamline your clinic operations with our comprehensive
                 healthcare management solution. From patient registration to
-                follow-up care, we've got you covered.
+                follow-up care, we&apos;ve got you covered.
               </p>
               <div className="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
                 <motion.div

@@ -117,7 +117,7 @@ export default function AppointmentSchedulingMockup() {
           <div className="bg-white rounded-lg shadow overflow-hidden">
             <div className="p-4 border-b border-gray-200">
               <h2 className="text-lg font-medium text-gray-900">
-                Today's Schedule
+                Today&apos;s Schedule
               </h2>
             </div>
             <div className="p-4">

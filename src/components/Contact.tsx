@@ -230,7 +230,7 @@ export default function Contact() {
                   </div>
                   <div className="ml-3">
                     <p className="text-sm text-green-700">
-                      Thank you for your message! We'll get back to you soon.
+                      Thank you for your message! We&apos;ll get back to you soon.
                     </p>
                   </div>
                 </div>

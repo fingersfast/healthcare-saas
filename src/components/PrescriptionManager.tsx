@@ -47,10 +47,10 @@ export default function PrescriptionManager() {
       status: "active",
     },
   ]);
-
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false);
-  const [selectedPrescription, setSelectedPrescription] =
+// selectedPrescription
+  const [ setShowAddModal] = useState(false);
+  const [ setShowEditModal] = useState(false);
+  const [setSelectedPrescription] =
     useState<Prescription | null>(null);
 
   const handleAddPrescription = () => {

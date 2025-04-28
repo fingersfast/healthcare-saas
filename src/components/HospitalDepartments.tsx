@@ -363,20 +363,20 @@ export default function HospitalDepartments() {
     return departments.find((dept) => dept.id === id);
   };
 
-  const getRoomStatusColor = (status: string) => {
-    switch (status) {
-      case "available":
-        return "bg-green-500";
-      case "occupied":
-        return "bg-red-500";
-      case "maintenance":
-        return "bg-yellow-500";
-      case "cleaning":
-        return "bg-blue-500";
-      default:
-        return "bg-gray-500";
-    }
-  };
+  // const getRoomStatusColor = (status: string) => {
+  //   switch (status) {
+  //     case "available":
+  //       return "bg-green-500";
+  //     case "occupied":
+  //       return "bg-red-500";
+  //     case "maintenance":
+  //       return "bg-yellow-500";
+  //     case "cleaning":
+  //       return "bg-blue-500";
+  //     default:
+  //       return "bg-gray-500";
+  //   }
+  // };
 
   const handleRoomClick = (room: Room) => {
     setSelectedRoom(room);

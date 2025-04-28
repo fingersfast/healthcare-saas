@@ -75,7 +75,7 @@ export default function PatientDashboard() {
     },
   ]);
 
-  const [medicalRecords, setMedicalRecords] = useState<MedicalRecord[]>([
+  const [medicalRecords] = useState<MedicalRecord[]>([
     {
       id: "1",
       date: "2024-03-15",
