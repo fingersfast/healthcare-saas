@@ -48,9 +48,9 @@ export default function PrescriptionManager() {
     },
   ]);
 // selectedPrescription
-  const [ setShowAddModal] = useState(false);
-  const [ setShowEditModal] = useState(false);
-  const [setSelectedPrescription] =
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [selectedPrescription, setSelectedPrescription] =
     useState<Prescription | null>(null);
 
   const handleAddPrescription = () => {
