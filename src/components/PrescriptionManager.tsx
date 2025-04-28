@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { PlusIcon, PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, PencilIcon, TrashIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface Prescription {
   id: string;
@@ -47,11 +47,10 @@ export default function PrescriptionManager() {
       status: "active",
     },
   ]);
-// selectedPrescription
+
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
-  const [selectedPrescription, setSelectedPrescription] =
-    useState<Prescription | null>(null);
+  const [selectedPrescription, setSelectedPrescription] = useState<Prescription | null>(null);
 
   const handleAddPrescription = () => {
     setShowAddModal(true);
@@ -64,6 +63,12 @@ export default function PrescriptionManager() {
 
   const handleDeletePrescription = (id: string) => {
     setPrescriptions(prescriptions.filter((p) => p.id !== id));
+  };
+
+  const handleCloseModals = () => {
+    setShowAddModal(false);
+    setShowEditModal(false);
+    setSelectedPrescription(null);
   };
 
   return (
@@ -176,6 +181,140 @@ export default function PrescriptionManager() {
           ))}
         </div>
       </div>
+
+      {/* Add Prescription Modal */}
+      {showAddModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg max-w-lg w-full">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold">Add New Prescription</h2>
+              <button
+                onClick={handleCloseModals}
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Doctor
+              </label>
+              <input
+                type="text"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                placeholder="Dr. Name"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Date
+              </label>
+              <input
+                type="date"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Instructions
+              </label>
+              <textarea
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                rows={3}
+                placeholder="Patient instructions"
+              ></textarea>
+            </div>
+            <div className="flex justify-end">
+              <button
+                onClick={handleCloseModals}
+                className="mr-2 px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleCloseModals}
+                className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Add Prescription
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Edit Prescription Modal */}
+      {showEditModal && selectedPrescription && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg max-w-lg w-full">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold">Edit Prescription</h2>
+              <button
+                onClick={handleCloseModals}
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Doctor
+              </label>
+              <input
+                type="text"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                defaultValue={selectedPrescription.doctor}
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Date
+              </label>
+              <input
+                type="date"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                defaultValue={selectedPrescription.date}
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Instructions
+              </label>
+              <textarea
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                rows={3}
+                defaultValue={selectedPrescription.instructions}
+              ></textarea>
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Status
+              </label>
+              <select
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                defaultValue={selectedPrescription.status}
+              >
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+            </div>
+            <div className="flex justify-end">
+              <button
+                onClick={handleCloseModals}
+                className="mr-2 px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleCloseModals}
+                className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Update Prescription
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
